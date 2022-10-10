@@ -7,13 +7,18 @@ public class minmaxlimitinput {
 	public static void main(String[] args) {
 		System.out.println("Enter numbers : ");
 		Scanner sc = new Scanner(System.in);
-		//char c = 'q';
-		int num;
+		char num;
+		boolean c = true;
 		int max =0, min =0;
 		try {
 			do 
 			{
-				num = sc.nextInt();
+				num = sc.next().charAt(0);
+				if (num == 'q') {
+					// System.out.println("Out");
+					c = false;
+					break;
+				}
 				if(max < num)
 				{
 					max = num;
