@@ -20,7 +20,6 @@ public class inputlimit {
 					num = Integer.parseInt(numm);
 					if (num != 'q') {
 						sum += num;
-						System.out.println("Summation on all given input are: " + sum);
 					} else {
 						c = false;
 					}
@@ -30,7 +29,6 @@ public class inputlimit {
 			sc.close();
 		} catch (Exception e) {
 			System.out.println("Summation on all given input are: " + sum);
-
 			System.out.println("terminated");
 		}
 	}

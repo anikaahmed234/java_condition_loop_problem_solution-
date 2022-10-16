@@ -3,6 +3,7 @@ package problemsolving;
 import java.text.DecimalFormat;
 
 import java.util.Scanner;
+import java.math.RoundingMode;
 
 public class twodigitdecimal {
 
@@ -14,13 +15,15 @@ public class twodigitdecimal {
 
 			double num1 = sc.nextDouble();
 			double num2 = sc.nextDouble();
-//
-//			String a = String.format("%.02f", num1);
-//			String b = String.format("%.02f", num2);
-//			
-			DecimalFormat f = new DecimalFormat("##.00");
-			String a = f.format(num1);
-			String b = f.format(num2);
+
+//			String a = String.format("%.2f", num1);
+//			String b = String.format("%.2f", num2);
+			
+			DecimalFormat df = new DecimalFormat("##.00");
+		    df.setRoundingMode(RoundingMode.FLOOR);
+
+			String a = df.format(num1);
+			String b = df.format(num2);
 
 			System.out.println(a + "\n" + b);
 			if (a.compareTo(b) == 0) {
