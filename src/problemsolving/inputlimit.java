@@ -3,37 +3,35 @@
 package problemsolving;
 
 import java.util.Scanner;
-//9. Write a program to sum of user input until users input ‘q’ from keyboard.
 
 public class inputlimit {
 
 	public static void main(String[] args) {
 		System.out.println("Enter numbers : ");
 		Scanner sc = new Scanner(System.in);
-		char num;
+		String numm;
+		int num = 0;
+		int sum = 0;
 		boolean c = true;
 		try {
 			do {
-				num = sc.next().charAt(0);
-				if (num == 'q') {
-					// System.out.println("Out");
-					c = false;
-					break;
+				numm = sc.next();
+				if (numm != "q") {
+					num = Integer.parseInt(numm);
+					if (num != 'q') {
+						sum += num;
+						System.out.println("Summation on all given input are: " + sum);
+					} else {
+						c = false;
+					}
 				}
-
-				else {
-					continue;
-				}
-
-			} while (c == true);
+			} while (c != false);
+		
 			sc.close();
-
 		} catch (Exception e) {
+			System.out.println("Summation on all given input are: " + sum);
+
 			System.out.println("terminated");
-			System.out.println(e);
-
 		}
-
 	}
-
 }

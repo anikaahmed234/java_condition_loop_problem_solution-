@@ -1,5 +1,7 @@
 package problemsolving;
 
+import java.text.DecimalFormat;
+
 import java.util.Scanner;
 
 public class twodigitdecimal {
@@ -12,9 +14,13 @@ public class twodigitdecimal {
 
 			double num1 = sc.nextDouble();
 			double num2 = sc.nextDouble();
-
-			String a = String.format("%.02f", num1);
-			String b = String.format("%.02f", num2);
+//
+//			String a = String.format("%.02f", num1);
+//			String b = String.format("%.02f", num2);
+//			
+			DecimalFormat f = new DecimalFormat("##.00");
+			String a = f.format(num1);
+			String b = f.format(num2);
 
 			System.out.println(a + "\n" + b);
 			if (a.compareTo(b) == 0) {

@@ -1,40 +1,48 @@
 //10. Write a program to enter the numbers till the user wants and at the end, the program should display the largest and smallest numbers user entered.
 package problemsolving;
+
 import java.util.Scanner;
 
 public class minmaxlimitinput {
-	
+
 	public static void main(String[] args) {
 		System.out.println("Enter numbers : ");
 		Scanner sc = new Scanner(System.in);
-		char num;
-		boolean c = true;
-		int max =0, min =0;
+		String numm;
+		int max = 0, min =0;
+		int num;
 		try {
-			do 
-			{
-				num = sc.next().charAt(0);
-				if (num == 'q') {
-					// System.out.println("Out");
-					c = false;
-					break;
+			do {
+				numm = sc.next();
+				if (numm != "q") {
+					num = Integer.parseInt(numm);
+					if (max < num) {
+						max = num;
+					} else {
+						if(min == 0)
+						{
+							if(num<max)
+							{
+								min = num;
+							}
+			
+						}
+						else if (min > num)
+						{
+							min = num;
+						}
+						
+						
+					}
 				}
-				if(max < num)
-				{
-					max = num;
-				}
-				else				
-				{
-					min = num;
-				}
-			} while (num != 113);
+			} while (numm != "q");
 			sc.close();
-		} 
+		}
 		catch (Exception e) {
 			System.out.println("terminated");
 		}
-		System.out.println("The largest number is: " +max);
-		System.out.println("The smallest number is: " +min);
+		System.out.println("The largest number is: " + max);
+		System.out.println("The smallest number is: " + min);
 	}
 
 }
