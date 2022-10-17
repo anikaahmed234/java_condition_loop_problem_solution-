@@ -15,7 +15,7 @@ public class minmaxlimitinput {
 			do {
 				numm = sc.next();
 				if (numm != "q") {
-					num = Integer.parseInt(numm);
+					num = Integer.valueOf(numm);  
 					if (max < num) {
 						max = num;
 					} else {
