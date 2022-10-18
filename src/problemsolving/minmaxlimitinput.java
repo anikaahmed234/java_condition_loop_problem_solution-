@@ -9,40 +9,36 @@ public class minmaxlimitinput {
 		System.out.println("Enter numbers : ");
 		Scanner sc = new Scanner(System.in);
 		String numm;
-		int max = 0, min =0;
+		int max = 0, min = 0;
 		int num;
 		try {
 			do {
 				numm = sc.next();
-				if (numm != "q") {
-					num = Integer.valueOf(numm);  
+				if(numm.equals("q"))
+				{
+					break;
+				}
+				else
+				{
+					num = Integer.valueOf(numm);
 					if (max < num) {
 						max = num;
 					} else {
-						if(min == 0)
-						{
-							if(num<max)
-							{
+						if (min == 0) {
+							if (num < max) {
 								min = num;
 							}
-			
-						}
-						else if (min > num)
-						{
+						} else if (min > num) {
 							min = num;
 						}
-						
-						
-					}
 				}
-			} while (numm != "q");
+				}
+			} while (!numm.equals("q"));
 			sc.close();
-		}
-		catch (Exception e) {
-			System.out.println("terminated");
+		} catch (Exception e) {
+			System.out.println(e);
 		}
 		System.out.println("The largest number is: " + max);
 		System.out.println("The smallest number is: " + min);
 	}
-
 }

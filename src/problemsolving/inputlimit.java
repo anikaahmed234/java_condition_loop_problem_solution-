@@ -6,22 +6,27 @@ public class inputlimit {
 	public static void main(String[] args) {
 		System.out.println("Enter numbers : ");
 		Scanner sc = new Scanner(System.in);
-		int num = 0;
+		String numm ;
+		int num =0;
 		int sum = 0;
 		try
 		{
-			while (true) {
-		
-			num = sc.nextInt();
+			do {	
+			numm = sc.next();
+			if(numm.equals("q"))
+			{
+				break;
+			}
+			else
+			{
+			num = Integer.valueOf(numm);
 			sum += num;
-		}
+			}
+		} while (!numm.equals("q"));
 		}
 		catch (Exception e) {
-			System.out.println("terminated");
+			System.out.println(e);
 		}
 		System.out.println("Summation of all given input: " + sum);
-
-
 	}
-
 }
